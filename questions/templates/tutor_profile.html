@@ -1,0 +1,8 @@
+<h1>{{ tutor.user.username }}'s Subjects and Levels</h1>
+<ul>
+{% for subject_level in tutor.subjects.all %}
+    <li>{{ subject_level }}</li>
+{% empty %}
+    <li>This tutor does not have any subjects or levels yet.</li>
+{% endfor %}
+</ul>
