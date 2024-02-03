@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2>Register as a Tutor</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="student">Register as Student</button>
+    <button type="submit" name="tutor">Register as Tutor</button>
+  </form>
+{% endblock %}
