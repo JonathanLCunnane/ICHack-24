@@ -1,15 +1,21 @@
 /* styles.css */
+:root {
+    --primary-color: #5eaebe;
+    --secondary-color: #9e8ad7;
+    --background-color: #ecf0f1;
+}
+
 
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e70000;
+    background-color: var(--primary-color);
 }
 
 header {
-    background-color: #333;
-    color: #4215be;
+    background-color: #f8f8f8;
+    color: var(--secondary-color);
     padding: 10px;
     text-align: center;
 }
@@ -34,4 +40,8 @@ footer {
     color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
 }
