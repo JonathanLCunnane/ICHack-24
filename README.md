@@ -19,6 +19,7 @@ Install the required packages:
 pip install -r requirements.txt
 
 Run migrations:
+python -m pip install Django
 python manage.py migrate
 This will apply all the migrations and create the necessary database schema.
 
