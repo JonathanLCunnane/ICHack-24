@@ -3,7 +3,11 @@
 {% block content %}
   <h2>Login</h2>
   <form method="post">
-    <button type="submit" name="student">Register as Student</button>
-    <button type="submit" name="tutor">Register as Tutor</button>
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login">
   </form>
+  <a href="{% url 'register-tutor'}">Register As Tutor</a>
+  <a href="{% url 'register-student'}">Register As Student</a>
+
 {% endblock %}

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from .models import User, Question
 
 class StudentSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -23,3 +23,9 @@ class TutorSignUpForm(UserCreationForm):
         if commit:
             user.save()
         return user
+    
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ['title', 'question', 'subject', 'level']

@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2>Student Dashboard</h2>
+  <p>Welcome, {{ user.username }}!</p>
+  <p>Here are the questions you've asked:</p>
+  <a href="/ask">Ask a question</a>
+  <a href="/logout">Logout</a>
+{% endblock %}
