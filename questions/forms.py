@@ -13,13 +13,13 @@ class StudentSignUpForm(UserCreationForm):
             user.save()
         return user
 
-class TeacherSignUpForm(UserCreationForm):
+class TutorSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.is_teacher = True
+        user.is_tutor = True
         if commit:
             user.save()
         return user

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .forms import StudentSignUpForm, TeacherSignUpForm
+from django.shortcuts import render, redirect
+from .forms import StudentSignUpForm, TutorSignUpForm
 
 def index(request):
     return render(request, 'layout.html')
@@ -9,7 +9,7 @@ def register(request):
         if 'student' in request.POST:
             form = StudentSignUpForm(request.POST)
         else:
-            form = TeacherSignUpForm(request.POST)
+            form = TutorSignUpForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('login')
