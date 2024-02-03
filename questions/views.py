@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import StudentSignUpForm, TutorSignUpForm
 
 def index(request):
-    return render(request, 'layout.html')
+    return render(request, 'index.html')
 
 def register(request):
     if request.method == 'POST':
@@ -16,8 +16,3 @@ def register(request):
     else:
         form = StudentSignUpForm()
     return render(request, 'register.html', {'form': form})
-
-def questionForm(request):
-    return render(request, 'questionForm.html',{'user':{
-        'username':'testuser',
-    }})
