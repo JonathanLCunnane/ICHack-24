@@ -28,3 +28,7 @@ python manage.py runserver
 This will start the Django development server. The user can then access the web app by navigating to http://localhost:8000 in their web browser.
 
 Please note that these instructions assume that the user has Python and Git installed on their machine.
+
+SUPERUSER
+username: admin
+password: 0000
