@@ -17,3 +17,8 @@ urlpatterns = [
     # Get help
     path("get-help/", views.get_help, name="get_help"),
 ]
+
+# Deal with registration - both tutor and student redirect to respective dashboard - dylan
+# Deal with login - redirect to respective dashboard - richard
+# Deal with displaying tutor and student profiles - jonni (doing tutor profiles)
+# Deal with displaying tutors available for help

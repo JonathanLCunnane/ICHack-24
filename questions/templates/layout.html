@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <!-- Navigation links can go here -->
-            <a href="{% url 'register_student' %}">Register As Student</a>
-            <a href="{% url 'register_tutor' %}">Register As Tutor</a>
-            <a href="{% url 'login' %}">Login</a>
+<ul>
+            <h1>Generic Education App Name!</h1>
+            <a href="/">Home</a>
 
+           </ul>
         </nav>
     </header>
     <main>

@@ -1,31 +1,38 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import StudentSignUpForm, TutorSignUpForm, QuestionForm
+from .forms import StudentSignUpForm, TutorSignUpForm, QuestionForm, SubjectLevelForm
 from django.http import HttpResponseForbidden, HttpResponse
+from django.contrib.auth import login as auth_login
 
 
 def index(request):
     return render(request, 'index.html')
 
+def register(request):
+    render(request, 'register.html', {'form': form})
+
 def register_tutor(request):
     if request.method == 'POST':
         form = TutorSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            tutor = form.save()
+            auth_login(request, tutor)
+            return redirect('tutor_dashboard')
     else:
-        form = TutorSignUpForm()
-    return render(request, 'register.html', {'form': form})
+        tutor_form = TutorSignUpForm()
+        subject_level_form = SubjectLevelForm()
+    return render(request, 'tutor_register.html', {'form': tutor_form, 'subject_level_form': subject_level_form})
 
 def register_student(request):
     if request.method == 'POST':
         form = StudentSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            student = form.save()
+            auth_login(request, student)
+            return redirect('student_dashboard')
     else:
-        form = TutorSignUpForm()
-    return render(request, 'register.html', {'form': form})
+        form = StudentSignUpForm()
+    return render(request, 'student_register.html', {'form': form})
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
