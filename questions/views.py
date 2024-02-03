@@ -66,8 +66,8 @@ def tutor_dashboard(request):
     return render(request, 'tutor_dashboard.html')
 
 def tutor_profile(request, tutor_id):
-
-    return render(request, 'tutor_profile.html')
+    
+    return render(request, 'tutor_profile.html', {'tutor_id': tutor_id})
 
 def student_profile(request, student_id):
 
