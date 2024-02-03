@@ -7,6 +7,9 @@ from django.http import HttpResponseForbidden, HttpResponse
 def index(request):
     return render(request, 'index.html')
 
+def register(request):
+    render(request, 'register.html', {'form': form})
+
 def register_tutor(request):
     if request.method == 'POST':
         form = TutorSignUpForm(request.POST)
