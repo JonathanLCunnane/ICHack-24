@@ -1,0 +1,140 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Form</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #4CAF50; /* Updated color */
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0; /* Touch the top */
+            border-radius: 0; /* Smooth edges */
+            
+        }
+
+        .navbar span {
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+        }
+
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>Welcome, {{ user.username}} </span>
+        <a href="#">Logout</a>
+    </div>
+    <h1>Question Form</h1>
+    <form id="questionForm" action="/submit-question" method="POST">
+        <label for="question">Question:</label>
+        <textarea id="question" name="question" rows="4" cols="50"></textarea>
+        <br>
+        <label for="fieldOfStudy">Field of Study:</label>
+        <select id="fieldOfStudy" name="fieldOfStudy">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <!-- Add more options for different fields of study -->
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Add your JavaScript code here
+        document.getElementById("questionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var question = document.getElementById("question").value;
+            var fieldOfStudy = document.getElementById("fieldOfStudy").value;
+            // Send the question and field of study to the server or perform any other necessary actions
+            // You can use AJAX or fetch API to send the data to the server
+            fetch('/submit-question', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: question, fieldOfStudy: fieldOfStudy })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from the server
+            })
+            .catch(error => {
+                // Handle any errors that occur during the request
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

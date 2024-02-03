@@ -17,6 +17,6 @@ def register(request):
         form = StudentSignUpForm()
     return render(request, 'register.html', {'form': form})
 
-
-def login(request):
-    return render(request, 'login.html')
+def questionForm(request):
+    return render(request, 'questionForm.html', {'user':
+                                                 {'username': 'testuser',}})
