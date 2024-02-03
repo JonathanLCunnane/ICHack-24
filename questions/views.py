@@ -5,7 +5,7 @@ from django.http import HttpResponseForbidden, HttpResponse
 
 
 def index(request):
-    return render(request, 'layout.html')
+    return render(request, 'index.html')
 
 def register_tutor(request):
     if request.method == 'POST':
