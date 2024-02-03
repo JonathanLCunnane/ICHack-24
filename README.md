@@ -11,6 +11,7 @@ python3 -m venv .venv
 Activate the virtual environment:
 
 On Windows:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv\Scripts\activate
 On Unix or MacOS:
 source .venv/bin/activate
