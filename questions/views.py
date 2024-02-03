@@ -8,8 +8,6 @@ from django.contrib.auth import login as auth_login
 def index(request):
     return render(request, 'index.html')
 
-def register(request):
-    render(request, 'register.html', {'form': form})
 
 def register_tutor(request):
     if request.method == 'POST':
