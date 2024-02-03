@@ -20,7 +20,7 @@ class Question(models.Model):
     question = models.TextField()
     title = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
-    level = models.CharField(max_length=100, choices=LEVEL_CHOICES)
+    level = models.CharField(max_length=100, choices=LEVEL_CHOICES, default='A')
     # document = models.FileField(upload_to='uploads/') #TODO: FILE UPLOADS
     date = models.DateTimeField(auto_now_add=True)
 

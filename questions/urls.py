@@ -6,8 +6,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("login/", views.login, name="login"),
     # Deal with registering
-    path("register-tutor/", views.register_tutor, name="register-tutor"),
-    path("register-student/", views.register_student, name="register-student"),
+    path("register-tutor/", views.register_tutor, name="register_tutor"),
+    path("register-student/", views.register_student, name="register_student"),
     # Dashboards
     path("student-dashboard/", views.student_dashboard, name="student_dashboard"),
     path("tutor-dashboard/", views.tutor_dashboard, name="tutor_dashboard"),
