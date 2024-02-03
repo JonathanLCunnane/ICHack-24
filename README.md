@@ -11,6 +11,7 @@ python3 -m venv .venv
 Activate the virtual environment:
 
 On Windows:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv\Scripts\activate
 On Unix or MacOS:
 source .venv/bin/activate
@@ -18,6 +19,7 @@ Install the required packages:
 pip install -r requirements.txt
 
 Run migrations:
+python -m pip install Django
 python manage.py migrate
 This will apply all the migrations and create the necessary database schema.
 
