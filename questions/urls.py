@@ -13,7 +13,7 @@ urlpatterns = [
     path("tutor-dashboard/", views.tutor_dashboard, name="tutor_dashboard"),
     # Profiles
     path("student/{student_id}/", views.student_profile, name="student_profile"),
-    path("tutor/{tutor_id}/", views.tutor_profile, name="tutor_profile"),
+    path("tutor/<int:tutor_id>/", views.tutor_profile, name="tutor_profile"),
     # Get help
     path("get-help/", views.get_help, name="get_help"),
 ]
