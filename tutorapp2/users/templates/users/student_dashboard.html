@@ -14,4 +14,10 @@
     {{ form.as_p }}
     <button type="submit" class="button">Submit</button>
 </form>
+{% if valid %}
+<p class="validFormSuccess"> {{ message }} </p>
+{% else %}
+<p class="invalidFormError"> {{ message }} </p>
+{% endif %}
+
 {% endblock %}

@@ -77,3 +77,13 @@ footer {
 .form label{
     width: calc(100%-80px);
 }
+
+.invalidFormError {
+    color: rgb(156, 13, 3);
+    font-size: 20px;
+}
+
+.validFormSuccess {
+    color: rgb(11, 117, 28);
+    font-size: 20px;
+}

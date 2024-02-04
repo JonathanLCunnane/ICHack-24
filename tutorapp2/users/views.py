@@ -76,7 +76,8 @@ def get_help(request):
         form = QuestionForm(request.POST)
         if form.is_valid():
             #TODO: Save the question and tutor get
-            return HttpResponse('Question submitted')
+            return render(request, 'users/student_dashboard.html', {'form': form, 'valid': True, 'message': "Your question was submitted!"})
+        return render(request, 'users/student_dashboard.html', {'form': form, 'valid': False, 'message': "Invalid Form! :("})
     else:
         form = QuestionForm()
-    return render(request, 'users/get_help.html', {'form': form})
+    return render(request, 'users/student_dashboard.html', {'form': form})
