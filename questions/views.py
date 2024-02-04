@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import StudentSignUpForm, TutorSignUpForm, QuestionForm, SubjectLevelForm
 from django.http import HttpResponseForbidden, HttpResponse
-from django.contrib.auth import login as auth_login
+from django.contrib.auth import login as auth_login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def index(request):
@@ -32,9 +33,6 @@ def register_student(request):
         form = StudentSignUpForm()
     return render(request, 'student_register.html', {'form': form})
 
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render, redirect
 
 def login(request):
     if request.method == 'POST':

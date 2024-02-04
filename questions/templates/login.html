@@ -3,8 +3,8 @@
 {% block content %}
   <h2>Login</h2>
   <form method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
+    {% csrf_token %}
+    {{ form.as_p }}
     <input type="submit" value="Login">
   </form>
   <a href="{% url 'register_tutor'}">Register As Tutor</a>
