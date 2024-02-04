@@ -19,7 +19,17 @@
                 <a href="{% url 'tutor-signup' %}">Register Tutor</a>
             </li>
             <li>
-                <a href="{% url 'login' %}">Login</a>
+                {% block loginout %}
+                    {% if loggedIn %}
+                    <form action="{%url 'logout' %}" method="post">
+                        <button class="button" type="submit">Logout</a>
+                    </form>
+                    {% else %}
+                    <form action="{%url 'login' %}" method="get">
+                        <button class="button" type="submit">Login</a>
+                    </form>
+                    {% endif %}
+                {% endblock %}
             </li>
            </ul>
         </nav>

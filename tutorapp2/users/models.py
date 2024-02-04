@@ -46,7 +46,7 @@ class Question(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     question = models.TextField()
     title = models.CharField(max_length=100)
-    subjectLevel = models.ForeignKey(SubjectLevel, on_delete=models.CASCADE, choices=SubjectLevel.SUBJECT_CHOICES)
+    subjectLevel = models.ForeignKey(SubjectLevel, on_delete=models.CASCADE)
     # document = models.FileField(upload_to='uploads/') #TODO: FILE UPLOADS
     date = models.DateTimeField(auto_now_add=True)
 

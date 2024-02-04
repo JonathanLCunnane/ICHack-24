@@ -1,4 +1,9 @@
 {% extends 'users/layout.html' %}
+{% block loginout %}
+    {% with loggedIn=True %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
 
 {% block title %}Tutor Home{% endblock %}
 
