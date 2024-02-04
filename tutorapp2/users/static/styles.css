@@ -1,0 +1,79 @@
+/* styles.css */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f39c12;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+}
+
+header {
+    background-color: #f8f8f8;
+    color: var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px; /* Adds space of 10 pixels around the element */
+    text-decoration: none;
+    background-color: var(--secondary-color); /* Button background color */
+    color: #333; /* Button text color */
+    border: 1px solid var(--background-color); /* Button border color */
+    border-radius: 4px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.button:hover {
+    background-color: var(--background-color);
+}
+
+.smallbutton {
+    display: inline-block;
+    padding: 2px 4px;
+    text-decoration: none;
+    background-color: var(--secondary-color); /* Button background color */
+    color: #333; /* Button text color */
+    border: 1px solid var(--background-color); /* Button border color */
+    border-radius: 4px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.smallbutton:hover {
+    background-color: var(--background-color);
+}
+
+.form label{
+    width: calc(100%-80px);
+}

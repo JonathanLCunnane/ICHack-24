@@ -16,7 +16,6 @@ urlpatterns = [
     path("tutor/<int:tutor_id>/", views.tutor_profile, name="tutor_profile"),
     # Get help
     path("get-help/", views.get_help, name="get_help"),
-    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 # Deal with registration - both tutor and student redirect to respective dashboard - dylan

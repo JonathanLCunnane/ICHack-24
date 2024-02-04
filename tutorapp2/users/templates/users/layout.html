@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tutor App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation links can go here -->
+            <ul>
+            <h1>Tutorful</h1>
+            <li>
+                <a href="{% url 'student-signup' %}">Register Student</a>
+            </li>
+            <li>
+                <a href="{% url 'tutor-signup' %}">Register Tutor</a>
+            </li>
+            <li>
+                <a href="{% url 'login' %}">Login</a>
+            </li>
+           </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

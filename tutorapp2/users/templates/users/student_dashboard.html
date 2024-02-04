@@ -1,0 +1,17 @@
+{% extends 'users/layout.html' %}
+
+{% block title %}Student Home{% endblock %}
+
+{% block content %}
+<h1>Student Homepage</h1>
+    <h1>Your Profile</h1>
+    <h2>Hello, {{ user.firstname }}</h2>
+    <h3>Username: {{ user.username }}</h3>
+    <h3>Email {{ user.email }}</h3>
+<h2>Get help:</h2>
+<form action="{% url 'get-help' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="button">Submit</button>
+</form>
+{% endblock %}
