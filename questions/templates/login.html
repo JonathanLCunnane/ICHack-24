@@ -2,12 +2,20 @@
 
 {% block content %}
   <h2>Login</h2>
-  <form method="post">
+  <form class="form" method="post">
     <input type="text" name="username" placeholder="Username">
     <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
+    <input class="smallbutton" type="submit" value="Login">
   </form>
-  <a href="{% url 'register_tutor'}">Register As Tutor</a>
-  <a href="{% url 'register_student'}">Register As Student</a>
+  <button class="button" onclick="redirectToRegisterStudent()">Register as Student</button>
+  <button class="button" onclick="redirectToRegisterTutor()">Register as Tutor</button>
+  <script>
+    function redirectToRegisterStudent() {
+        window.location.href = 'register-student/';
+    }
+    function redirectToRegisterTutor() {
+        window.location.href = 'register-tutor/';
+    }
+  </script>
 
 {% endblock %}

@@ -1,13 +1,18 @@
-{% extends 'layout.html' %}
+{% extends 'loggedInLayout.html' %}
 
 {% block content %}
   <h2>Student Dashboard</h2>
   <p>Welcome, {{ user.username }}!</p>
   <p>Here are the questions you've asked:</p>
-  <a href="/ask">Ask a question:</a>
+  <button class="button" onclick="askQuestion()">Ask a question</button>
+  <script>
+    function askQuestion() {
+        window.location.href = 'get-help/';
+    }
+    </script>
+  <!-- <a href="/ask">Ask a question:</a>
   <form action="{% url 'get_help' %}">
     {{ question_form.as_p }}
     
-  </form>
-  <a href="/logout">Logout</a>
+  </form> -->
 {% endblock %}

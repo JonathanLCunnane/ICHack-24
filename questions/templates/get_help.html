@@ -3,5 +3,5 @@
 <form action="{% url 'get_help' %}" method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="button">Submit</button>
 </form>

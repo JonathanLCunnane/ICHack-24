@@ -2,9 +2,22 @@
 
 {% block content %}
   <h2>Welcome</h2>
-  <button onclick="redirectToLogin()">Login</button>
-  <button onclick="redirectToRegisterStudent()">Register as Student</button>
-  <button onclick="redirectToRegisterTutor()">Register as Tutor</button>
+  <button class="button" onclick="redirectToLogin()">Login</button>
+  <button class="button" onclick="redirectToRegisterStudent()">Register as Student</button>
+  <button class="button" onclick="redirectToRegisterTutor()">Register as Tutor</button>
+
+  <div class="faq-section">
+    <div class="faq-item">
+        <h2 class="question">What subjects do you offer?</h2>
+        <div class="answer">We offer a wide range of subjects, including...</div>
+    </div>
+    <div class="faq-item">
+        <h2 class="question">How does online tutoring work?</h2>
+        <div class="answer">Online tutoring works through...</div>
+    </div>
+    <!-- Add more FAQ items as needed -->
+</div>
+
   <script>
     function redirectToLogin() {
         window.location.href = 'login/';

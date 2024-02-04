@@ -101,10 +101,8 @@
         <textarea id="question" name="question" rows="4" cols="50"></textarea>
         <br>
         <label for="fieldOfStudy">Field of Study:</label>
-        <select id="fieldOfStudy" name="fieldOfStudy">
-            <option value="math">Math</option>
-            <option value="science">Science</option>
-            <option value="history">History</option>
+        <div id="fieldOfStudy" name="fieldOfStudy"></div>
+
             <!-- Add more options for different fields of study -->
         </select>
         <br>
@@ -112,6 +110,12 @@
     </form>
 
     <script>
+         fetch('subjects.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('fieldOfStudy').innerHTML = html;
+            })
+            .catch(error => console.error('Error fetching options:', error));
         // Add your JavaScript code here
         document.getElementById("questionForm").addEventListener("submit", function(event) {
             event.preventDefault();

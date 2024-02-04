@@ -1,4 +1,5 @@
-<h1>{{ tutor.user.username }}'s Subjects and Levels</h1>
+<h1>Your Subjects and Levels</h1>
+<h2>Hello, {{ tutor.user.name }}</h2>
 <ul>
 {% for subject_level in tutor.subjects.all %}
     <li>{{ subject_level }}</li>
@@ -6,3 +7,4 @@
     <li>This tutor does not have any subjects or levels yet.</li>
 {% endfor %}
 </ul>
+<h2>Add more subjects and levels:</h2>
