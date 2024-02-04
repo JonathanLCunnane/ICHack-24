@@ -10,6 +10,10 @@ class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     credits = models.IntegerField(default=0)
 
+class Tutor(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    subjects = models.ManyToManyField('SubjectLevel')
+
 class Question(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     question = models.TextField()
@@ -18,9 +22,6 @@ class Question(models.Model):
     # document = models.FileField(upload_to='uploads/') #TODO: FILE UPLOADS
     date = models.DateTimeField(auto_now_add=True)
 
-class Tutor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    subjects = models.ManyToManyField('SubjectLevel')
 
 class SubjectLevel(models.Model):
     LEVEL_CHOICES = [

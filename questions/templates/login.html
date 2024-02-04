@@ -2,10 +2,10 @@
 
 {% block content %}
   <h2>Login</h2>
-  <form class="form" method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input class="smallbutton" type="submit" value="Login">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
   </form>
   <button class="button" onclick="redirectToRegisterStudent()">Register as Student</button>
   <button class="button" onclick="redirectToRegisterTutor()">Register as Tutor</button>
