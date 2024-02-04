@@ -5,6 +5,19 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
+LEVEL_CHOICES = [
+    ('A', 'A level'),
+    ('G', 'GCSE'),
+    ('K', 'KS3'),
+]
+SUBJECT_CHOICES = [
+    ('CS', 'Computer Science'),
+    ('M', 'Maths'),
+    ('P', 'Physics'),
+    ('C', 'Chemistry'),
+    ('B', 'Biology'),
+]
+
 class User(AbstractUser):
     email = models.EmailField(unique=True)
     is_student = models.BooleanField(default=False)
@@ -28,24 +41,12 @@ class Question(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     question = models.TextField()
     title = models.CharField(max_length=100)
-    subjectLevel = models.ForeignKey('SubjectLevel', on_delete=models.CASCADE)
+    subjectLevel = models.ForeignKey('SubjectLevel', on_delete=models.CASCADE, choices=SUBJECT_CHOICES)
     # document = models.FileField(upload_to='uploads/') #TODO: FILE UPLOADS
     date = models.DateTimeField(auto_now_add=True)
 
 
 class SubjectLevel(models.Model):
-    LEVEL_CHOICES = [
-        ('A', 'A level'),
-        ('G', 'GCSE'),
-        ('K', 'KS3'),
-    ]
-    SUBJECT_CHOICES = [
-        ('CS', 'Computer Science'),
-        ('M', 'Maths'),
-        ('P', 'Physics'),
-        ('C', 'Chemistry'),
-        ('B', 'Biology'),
-    ]
     level = models.CharField(max_length=5, choices=LEVEL_CHOICES)
     subject = models.CharField(max_length=5, choices=SUBJECT_CHOICES)
     def __str__(self):
